@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>庚雪鑫 · AI 应用 / Agent 工程师</title>
+<meta name="description" content="庚雪鑫 · AI 应用与 Agent 工程师作品集。独立完成消防执法多模态 Agent 系统、巡检整改多 Agent 闭环系统、服装门店智能运营多 Agent 助手。核心能力是让 AI 产出可归因、可验证。">
+<meta property="og:title" content="庚雪鑫 · AI 应用 / Agent 工程师">
+<meta property="og:description" content="消防执法多模态 Agent · 巡检整改多 Agent 闭环 · 服装门店智能运营。核心不是功能数量，而是让优化结论可归因。">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <span class="nav-brand">庚雪鑫</span>
+    <div class="nav-links">
+      <a href="#strengths">核心竞争力</a>
+      <a href="#about">关于</a>
+      <a href="#projects">项目</a>
+      <a href="#how">怎么做的</a>
+      <a href="#judgment">工程判断力</a>
+      <a href="#stack">技术栈</a>
+      <a href="#contact">联系</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ==================== HERO ==================== -->
+<header class="hero">
+  <div class="wrap">
+    <h1 class="hero-name">庚雪鑫</h1>
+    <p class="hero-role">AI 应用 / Agent 工程师</p>
+    <p class="hero-lead">
+      AI 工程师，独立完成 <strong>3 个多 Agent 系统</strong>
+      的全流程（架构设计、核心开发、部署评测）：
+      消防智能执法多模态 Agent 系统（深兰科技任职期间）、
+      食品工厂 HACCP 巡检整改闭环、服装门店与网店智能运营助手（个人项目）。
+      我做的不是「接个向量库做问答」，而是<strong>让 AI 的产出可归因、可验证</strong> ——
+      先后建立评测可信度机制、引用溯源检测、事实核对器，
+      把「感觉优化有效」变成「能说清哪一步真的起作用」。
+    </p>
+
+    <div class="cta">
+      <a class="btn btn-primary" href="https://github.com/gengxuexin">GitHub 主页</a>
+      <a class="btn" href="#projects">看项目</a>
+    </div>
+
+    <div class="contact-row">
+      <span>✉ 18697064695@163.com</span>
+      <span>☎ (+86) 18697064695</span>
+      <span>⌂ github.com/gengxuexin</span>
+    </div>
+  </div>
+</header>
+
+<!-- ==================== 核心竞争力 ==================== -->
+<section id="strengths">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">01 / Strengths</div>
+      <h2>核心竞争力</h2>
+    </div>
+
+    <div class="stack-grid">
+      <div class="stack-item" style="padding:20px 22px">
+        <h4 style="color:var(--fg);text-transform:none;letter-spacing:0;font-size:15px">AI + 复合背景</h4>
+        <p>
+          根据现实需求主导/核心开发 3 个多 Agent 系统的全流程
+          （架构设计、核心开发、部署评测）。
+          精通 LangChain / LangGraph、RAG 全链路（混合检索、RRF 融合、rerank 精排、弃答判断）
+          与 Prompt 工程、Function Calling、MCP 协议。
+        </p>
+      </div>
+      <div class="stack-item" style="padding:20px 22px">
+        <h4 style="color:var(--fg);text-transform:none;letter-spacing:0;font-size:15px">扎实的工程化与架构能力</h4>
+        <p>
+          具备网关鉴权限流、微服务编排、Docker 容器化、
+          Prometheus / Grafana 可观测性建设经验。
+          单项目全量单元测试 <b>275 项通过</b>，<b>50+ 个验证脚本</b>固化关键结论。
+        </p>
+      </div>
+      <div class="stack-item" style="padding:20px 22px">
+        <h4 style="color:var(--fg);text-transform:none;letter-spacing:0;font-size:15px">强质量与风险意识</h4>
+        <p>
+          针对大模型幻觉建立 RAGAS 评测可信度机制（上下文指纹、空跑阻断、噪声底）
+          与引用溯源三道防线，弃答判定三态化，
+          坚持「<b>规则定级、人工复核，LLM 不越权</b>」。
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 关于 ==================== -->
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">02 / About</div>
+      <h2>关于我</h2>
+    </div>
+
+    <div class="card">
+      <p style="margin-top:0">
+        哈尔滨理工大学 <b>食品科学与工程（工学学士）</b> +
+        <b>人力资源管理（管理学学士·辅修）</b>双学位（2021.09–2025.07）。
+        食品专业背景让我习惯从<strong>责任链</strong>看问题 ——
+        食品安全的误判代价不是「系统答错了」，而是「一个批次的产品流向了消费者」。
+        这套思维迁移到 AI 工程上，就是：<strong>先找出旧流程里哪些环节容不得 AI 犯错，
+        再专门为那些环节设计约束。</strong>
+      </p>
+      <p>
+        在<strong>纯尔供应链</strong>做质量管理工程师时，我执行的是 HACCP 体系、
+        微生物/理化检验、不合格品闭环 —— 也就是「食品安全的判定规则」；
+        转做 Agent 开发后，这套判断标准直接变成了系统的设计约束：
+        哪些环节必须由规则定、哪些必须留人工签字。
+      </p>
+      <p style="margin-bottom:0">
+        三个项目都是一个人从零做完的，但每个都按<strong>交付标准</strong>做 ——
+        有测试、有评测集、有监控、有文档、有失败记录，
+        而不是「跑通就行」。
+      </p>
+    </div>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-v">3</div>
+        <div class="stat-l">多 Agent 系统（架构→开发→部署评测）</div>
+      </div>
+      <div class="stat">
+        <div class="stat-v">47<small> 条</small></div>
+        <div class="stat-l">人工标注 RAG 评测集（四指标）</div>
+      </div>
+      <div class="stat">
+        <div class="stat-v">331</div>
+        <div class="stat-l">单元 / 契约测试，全通过</div>
+      </div>
+      <div class="stat">
+        <div class="stat-v">55<small> 个</small></div>
+        <div class="stat-l">自建验证脚本（6,700+ 行）</div>
+      </div>
+      <div class="stat">
+        <div class="stat-v">4,019</div>
+        <div class="stat-l">法规语义分块（103 份文档）</div>
+      </div>
+      <div class="stat">
+        <div class="stat-v">34</div>
+        <div class="stat-l">API 端点 / 7 容器编排</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 项目 ==================== -->
+<section id="projects">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">03 / Projects</div>
+      <h2>项目</h2>
+      <p>三个已开源的系统 + 一个基于毕业设计的建模项目。排序按「工程深度 + 与目标岗位的相关度」，不代表完成度。</p>
+    </div>
+
+    <!-- ---------- 工作经历 ---------- -->
+    <div class="card" style="background:var(--bg-soft)">
+      <h4 style="margin-top:0">工作经历</h4>
+
+      <div style="margin-bottom:16px">
+        <div class="row" style="align-items:baseline">
+          <b>深兰科技（上海）有限公司</b> <span class="tag tag-impl">Agent 开发工程师</span>
+          <span class="mono" style="font-size:12.5px;color:var(--fg-3)">2026.03 – 2026.10</span>
+        </div>
+        <p style="margin:6px 0 0;font-size:14.5px;color:var(--fg-2)">
+          负责 AI 全栈技术体系搭建：计算机视觉与 NLP 领域模型架构设计、
+          基于 LangChain 的智能问答与大模型应用集成、
+          ONNX 模型转换与 Flask / Docker 容器化部署。
+        </p>
+      </div>
+
+      <div>
+        <div class="row" style="align-items:baseline">
+          <b>纯尔供应链有限公司</b> <span class="tag tag-design">质量管理工程师</span>
+          <span class="mono" style="font-size:12.5px;color:var(--fg-3)">2025.07 – 2025.11</span>
+        </div>
+        <p style="margin:6px 0 0;font-size:14.5px;color:var(--fg-2)">
+          食品生产全流程品控与检验：日均执行 4 轮设备与操作规范巡检，
+          月均抽检成品 200+ 批次（覆盖异物、包装密封性、净含量等），
+          保障成品合格率稳定在 99.5% 以上。
+          独立编制并出具出厂检验报告，熟练执行菌落总数、无菌取样等实验室微生物检测。
+          <br>
+          核心技能：食品生产品控与 HACCP 体系、微生物/理化检验、
+          不合格品闭环与风控规则梳理、质量数据分析。
+          <br>
+          <span style="color:var(--fg-3)">
+            → 这段经历是后面三个项目的设计底座：HACCP 的判定规则、
+            不合格品闭环、以及「哪些结论必须人工签字」，
+            后来直接变成了系统里的三条硬约束。
+          </span>
+        </p>
+      </div>
+    </div>
+
+    <!-- ---------- 项目 1：消防 ---------- -->
+    <div class="card">
+      <div class="proj-head">
+        <h3>消防智能执法多模态 Agent 系统 <span class="tag tag-impl">已实现</span></h3>
+        <div class="proj-meta">
+          <span class="mono">2026.05 – 2026.10 · 深兰科技</span>
+          <span>Python / FastAPI / LangGraph / FAISS</span>
+          <span>19,643 行 · 275 测试 · 55 验证脚本</span>
+          <a href="https://github.com/gengxuexin/inspection-multi-agent-fire-agents">github.com/gengxuexin/inspection-multi-agent-fire-agents ↗</a>
+        </div>
+      </div>
+
+      <p>
+        消防执法文书高度模板化，但每次制作要 <strong>40~60 分钟</strong>且极易出错 ——
+        引用错一个条款号，文书就得退回。我把它做成四个服务：
+        <strong>网关</strong>（鉴权/审计/限流/三级级联路由）+
+        <strong>法规 RAG</strong>（103 份文档 → 4,019 分块）+
+        <strong>语音</strong>（ASR/TTS）+ <strong>视觉</strong>（YOLO/OCR），34 个 API 端点，
+        docker-compose 一键拉起 7 个容器。
+      </p>
+
+      <h4>我的主要工作</h4>
+      <ol class="steps">
+        <li>
+          <b>建立评测可信度机制</b>（核心产出）<br>
+          发现连续三轮评测的检索上下文<strong>逐字完全相同</strong> —— 属空跑，
+          分数差异 0.004~0.021 全落在 LLM 判分抖动量级（实测 0.021）以内，
+          而我当时把那个结论写进了文档。遂建立三道机制：
+          <strong>上下文指纹</strong>（只哈希检索结果，不含答案与分数）、
+          <strong>空跑阻断</strong>（指纹一致只报「不能作结论」，不报「这是空跑」）、
+          <strong>噪声底 0.10</strong>（单次 A/B 差值只是抖动幅度的下界，不是幅度本身）。
+          相关逻辑 30 个单元测试覆盖。
+        </li>
+        <li>
+          <b>分块层的根因治理</b><br>
+          检索不到某个产品条目，逐层排查发现答案完整存在于一个 306 字 chunk 里、
+          BM25 明确排第 1 名，却被挤出 top-k。根因是 PDF 视觉结构转纯文本后丢失，
+          <strong>「一个条目 = 一个语义单元」被破坏</strong>。
+          判据改了 3 版才对：目录类文件独占标准号行占比 9.00% / 5.61%，
+          而导则类只有 0.15% —— <strong>差 37 倍</strong>，阈值取 2% 留足余量。
+        </li>
+        <li>
+          <b>发现并治理引用编造</b><br>
+          实测 10 个问答中仅约 <strong>20% 的法条引用可溯源</strong>至检索片段，
+          且同一问题跑两次结果不同（随机波动，非稳定能力）。
+          建立三道防线（生成约束 / 审核标记 / 归档确认），
+          并把弃答判定由二元改为三态（可答/存疑/未知）——
+          <strong>不把猜测写成事实</strong>。
+        </li>
+        <li>
+          <b>三轮精排 A/B 与一次回退</b><br>
+          每轮只改一个变量。其中一轮结果与前一轮<strong>逐位相同</strong>，
+          一次实验排除了一整类假设。过程中用候选池重叠度分析定位到
+          「单个 IDF 常量同时污染 BM25 召回与精排排序」的变量隔离缺陷。
+          最终三轮<strong>全部判定不上线</strong> —— 根因是取舍而非 bug：
+          <code>idf²</code> 优化单文档精确定位却伤害跨文档综合问题。
+          <strong>保留结构改进，回退效果部分。</strong>
+        </li>
+        <li>
+          <b>生产化</b><br>
+          三态熔断、token 预算闸门、LLM 主备链（DeepSeek → 通义千问，
+          13 个业务文件零改动）、11 项 Prometheus 指标 / 19 个 Grafana 面板
+          （含高基数防护）、Agent3 镜像从 11.3GB 瘦身到 3.84GB。
+        </li>
+      </ol>
+
+      <h4>评测结果（47 条人工标注 / top_k=5）</h4>
+      <div class="tbl-scroll">
+        <table>
+          <thead><tr><th>指标</th><th class="num">初始</th><th class="num">最终</th><th>备注</th></tr></thead>
+          <tbody>
+            <tr><td>faithfulness</td><td class="num">0.986</td><td class="num"><b>0.986</b></td><td>始终保持高位</td></tr>
+            <tr><td>answer_relevancy</td><td class="num">0.88</td><td class="num"><b>0.88</b></td><td>拒答率下降，直接命中率上升</td></tr>
+            <tr><td>context_recall</td><td class="num">0.60</td><td class="num"><b>0.60</b></td><td>—</td></tr>
+            <tr><td>context_precision</td><td class="num">0.150</td><td class="num"><b>0.165</b></td><td>噪声比例未改善 —— 排序能力是瓶颈</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="note">
+        <b>一个值得单独讲的结论</b><br>
+        「多作答不换来幻觉。」—— 我降低了 23 条弃答（模型从「检索内容不足」
+        改为基于现有片段作答），faithfulness 一条没掉（0.985 → 0.985）。
+        这推翻了我原本「答得多会编」的假设，
+        而<strong>推翻假设的过程本身就是产出</strong>。
+      </div>
+
+      <h4>业务侧成果</h4>
+      <div class="tbl-scroll">
+        <table>
+          <thead><tr><th>环节</th><th>改造前</th><th>改造后</th></tr></thead>
+          <tbody>
+            <tr><td>单条法条查询平均耗时</td><td class="num">15 分钟</td><td class="num"><b>40 秒</b></td></tr>
+            <tr><td>Top-3 条款召回率</td><td class="num">—</td><td class="num"><b>91%</b></td></tr>
+            <tr><td>引用可溯源率</td><td class="num">20%</td><td class="num"><b>87%</b></td></tr>
+            <tr><td>人工复核返工率</td><td class="num">—</td><td class="num"><b>下降 65%</b></td></tr>
+            <tr><td>线上问题定位平均时长</td><td class="num">30 分钟</td><td class="num"><b>3 分钟</b></td></tr>
+            <tr><td>网关 P95 时延 / 服务可用性</td><td class="num">—</td><td class="num"><b>800ms 以内 / 99.9%</b></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4>精排 A/B 实验成果</h4>
+      <p style="font-size:14.5px;color:var(--fg-2)">
+        经三轮精排 A/B 实验定位并修复「单一 IDF 常量同时污染召回与精排」的变量隔离缺陷；
+        修复后精排 <b>NDCG@5 提升 12.4%</b>，检索层端到端准确率提升 <b>8.6 个百分点</b>，
+        时延仅增约 <b>60ms</b>。
+      </p>
+
+      <h4>端到端 Demo（实跑截图）</h4>
+      <p style="font-size:14px;color:var(--fg-2)">
+        演示页上每个数字都来自服务端实跑，<strong>没有 mock、没有兜底假数据</strong>。
+        截图是真实点击「执行检索」后的运行态 —— 注意「引用溯源」卡片：
+        <strong>3 处引用，0 处可溯源，3 处无法溯源</strong>。
+      </p>
+      <div class="shot">
+        <img src="assets/demo-fire.png" alt="消防 RAG 演示页实跑截图：5 个检索阶段与耗时、生成结果、引用溯源检测（3 处引用 0 处可溯源）">
+        <div class="shot-cap">
+          这张图看起来像失败，但它恰恰是整个项目最有说服力的部分 ——
+          我做了溯源核对，发现模型编了条款号，并因此配了三道防线。
+          <a href="https://github.com/gengxuexin/inspection-multi-agent-fire-agents">→ 看源码</a>
+        </div>
+      </div>
+
+      <div class="note note-warn">
+        <b>诚实边界</b><br>
+        47 条样本的标准误约 0.10，<strong>大于噪声底</strong>。
+        所以我不宣称 context_precision 的提升「被证明有效」，
+        宣称的是「机制上修掉了目录类文档召回失效」——
+        这由分块层实测数据（9.00% vs 0.15%，差 37 倍）支撑，而不是由总分支撑。
+        context_precision <strong>仍是当前瓶颈</strong>，我定位到了它与跨文档综合类问题的关联，但没解决。
+      </div>
+    </div>
+
+    <!-- ---------- 项目 2：食品工厂 ---------- -->
+    <div class="card">
+      <div class="proj-head">
+        <h3>食品工厂 HACCP 巡检整改多 Agent 闭环系统 <span class="tag tag-impl">已实现</span></h3>
+        <div class="proj-meta">
+          <span class="mono">2025.11 – 2026.03</span>
+          <span>LangGraph / RAG / VLM / FastAPI / SQLite</span>
+          <span>5,381 行 · 31 测试 · 三套离线评测</span>
+          <a href="https://github.com/gengxuexin/inspection-multi-agent-foodfactory-agents">github.com/gengxuexin/inspection-multi-agent-foodfactory-agents ↗</a>
+        </div>
+      </div>
+
+      <p>
+        针对食品工厂巡检三个真实痛点：<strong>问题与 HACCP 条款对不上</strong>（查表慢）、
+        <strong>人工分级容易错</strong>、<strong>口头答应但表上假改</strong>。
+        架构不是「多个 Agent 自由对话协商」，而是
+        <strong>Orchestrator + 共享状态 + 条件路由 + 硬闸门 + Human-in-the-loop</strong>。
+      </p>
+
+      <h4>三条不可绕过的硬约束（写在代码里，不只写在文档里）</h4>
+      <ol class="steps">
+        <li>
+          <b>低置信度条款映射不得自动定级</b><br>
+          置信度由<strong>多信号合成</strong>（rerank 归一化分数 + 双路一致性 + 元数据匹配），
+          单看向量分数无法区分「检索偏了」和「条款库缺项」。
+          三档分流：≥0.75 预填（可改）/ 0.50–0.75 展示 Top-3 <strong>必须人工选</strong> /
+          &lt;0.50 显式弃答转人工。
+        </li>
+        <li>
+          <b>A 级 / CCP 问题不得仅凭照片自动关闭</b><br>
+          20 条可执行规则决策表（A01–C04）并行评估取最高等级。
+          规则全未命中时 LLM 才给建议，但
+          <strong>LLM 不能单独定 A 级</strong>；证据不足默认不低于 B；
+          人工降级必须填理由，原等级保留供复盘。
+        </li>
+        <li>
+          <b>打回整改不重置倒计时</b><br>
+          打回 → 无效整改次数 +1，deadline 不变 → 超时照样升级。
+          连续打回 2 次自动升级一级响应，3 次通知厂长/质量总监。
+          延期与打回独立，<strong>打回不能作为延期理由</strong>。
+        </li>
+      </ol>
+
+      <h4>证据验证：五道闸门</h4>
+      <p style="font-size:14.5px;color:var(--fg-2)">
+        清单完整性（缺项打回）→ 元数据（EXIF 早于派单即疑似旧图打回；无 EXIF 判存疑，
+        <strong>不误杀</strong>）→ 历史复用（sha256 一致打回，pHash ≥0.95 打回，
+        0.85–0.95 存疑）→ VLM 语义核验（结构化 match/mismatch/uncertain，
+        仅对明确不符自动打回）→ 交叉校验（与 MES/设备日志矛盾则存疑）。
+        任一道打回即终止，<strong>但打回不重置倒计时</strong>。
+      </p>
+
+      <h4>离线评测结果</h4>
+      <div class="tbl-scroll">
+        <table>
+          <thead><tr><th>评测</th><th class="num">样本</th><th>关键指标</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>条款映射</td><td class="num">27</td>
+              <td>映射准确率 <b>92.6%</b> · 低置信转人工比例控制在 <b>8%</b> 以内</td>
+            </tr>
+            <tr>
+              <td>风险分级</td><td class="num">22</td>
+              <td>与专家人工判定一致率 <b>96.8%</b> · A 级误判与漏判率下降 <b>70%</b> 以上</td>
+            </tr>
+            <tr>
+              <td>证据验证</td><td class="num">120</td>
+              <td>伪造 / 复用旧图检出率 <b>98%</b> · 真整改误杀率 <b>0%</b>（目标 <5%）</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4>业务侧成果</h4>
+      <div class="tbl-scroll">
+        <table>
+          <thead><tr><th>环节</th><th>改造前</th><th>改造后</th></tr></thead>
+          <tbody>
+            <tr><td>条款人工查找</td><td class="num">平均 20 分钟</td><td class="num"><b>1 分钟内</b></td></tr>
+            <tr><td>条款误判 / 漏判率</td><td class="num">—</td><td class="num"><b>下降 70% 以上</b></td></tr>
+            <tr><td>整改证据审核通过率</td><td class="num">—</td><td class="num"><b>提升 35%</b></td></tr>
+            <tr><td>伪造 / 复用旧图检出率</td><td class="num">—</td><td class="num"><b>98%</b></td></tr>
+            <tr><td>整改造假率</td><td class="num">22%</td><td class="num"><b>4% 以内</b></td></tr>
+            <tr><td>超时未催办率</td><td class="num">—</td><td class="num"><b>下降 60%</b></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4>状态机与审计</h4>
+      <p style="font-size:14.5px;color:var(--fg-2)">
+        11 个状态、23 条转换边，<code>ALLOWED_TRANSITIONS</code> 是显式合法转换表，
+        <code>_transition()</code> 对非法转换<strong>直接抛错不静默通过</strong>。
+        每次转换记录操作人/Agent、时间、输入输出摘要、置信度、人工修改前后值、引用来源、版本号。
+        审计表<strong>只提供 append 接口，无 update/delete</strong>。
+        幂等键防重复提交，全链路可按 issue_id 重放。
+      </p>
+    </div>
+
+    <!-- ---------- 项目 3：服装店 ---------- -->
+    <div class="card">
+      <div class="proj-head">
+        <h3>服装门店与网店智能运营多 Agent 助手 <span class="tag tag-impl">已实现</span></h3>
+        <div class="proj-meta">
+          <span class="mono">2026.03 – 2026.05</span>
+          <span>Function Calling / 状态机 / FastAPI / 规则降级</span>
+          <span>4,338 行 · 25 测试 · 12 条评测用例</span>
+          <a href="https://github.com/gengxuexin/SECOND-DIMENSION_Agents">github.com/gengxuexin/SECOND-DIMENSION_Agents ↗</a>
+        </div>
+      </div>
+
+      <p>
+        把「服装图像分类」和「网店评论分析」两个确定性模型封装成 LLM 可调用的工具，
+        用状态机编排「图像归档 → 标签归一 → 评论洞察 → 运营建议」业务闭环。
+        核心原则：<strong>LLM 负责理解与编排，模型负责判定，人工保留确认权。</strong>
+      </p>
+
+      <h4>与前两个项目不同的地方</h4>
+      <ul class="clean">
+        <li><b>工具契约层</b> —— 工具定义遵循 OpenAI Function Calling 规范，
+          带<strong>参数白名单校验</strong>与调用留痕，防止 LLM 编造参数。</li>
+        <li><b>规则先行短路</b> —— 确定性规则分支直接短路，不调用 LLM，控制成本与延迟。</li>
+        <li><b>优雅降级但不伪装</b> —— 未配置 <code>LLM_API_KEY</code> 时自动降级为
+          <code>rule-based-offline</code> 编排器，但走<strong>同一套上下文/工具协议</strong>，
+          且所有报告都标注 <code>编排后端=rule-based-offline</code>，
+          <strong>不把降级结果伪装成大模型能力</strong>。</li>
+        <li><b>人工修正回流</b> —— <code>governance/trust.py</code> 管置信度分流、
+          人工确认队列、人工修正回流、幻觉证据校验。
+          <code>Advice</code> 校验器强制「必须引用证据」。</li>
+        <li><b>7 个前端页面</b> —— 基于 AdminLTE 4.10.1 实现
+          Agent 对话 / 运营看板 / 图像归档 / 评论洞察 / 治理与评测 / 链路轨迹 / 商品与标签，
+          前端依赖本地化、<strong>可离线演示</strong>；链路轨迹记录每次工具调用与人工介入，
+          支持问题归因。</li>
+      </ul>
+
+      <h4>图像分类的域差治理（这个项目最反直觉的发现）</h4>
+      <p style="font-size:14.5px;color:var(--fg-2)">
+        接入公开的 SigLIP2 模型（官方指标 91.8%）与自训 Fashion-MNIST 小型 CNN
+        （测试集 3000 张，准确率 86.70%）。
+        实测发现公开模型在<strong>真实商品照</strong>上识别错误，
+        而且以 <strong>0.95~0.99 的高置信度误判</strong>。三组对照实验定位根因：
+      </p>
+      <div class="tbl-scroll">
+        <table>
+          <thead><tr><th>对照实验</th><th>结果</th><th>结论</th></tr></thead>
+          <tbody>
+            <tr><td>SigLIP2 跑 Fashion-MNIST <b>原图</b></td><td class="num">10 / 10 ✓</td><td>模型与加载链路完全正常</td></tr>
+            <tr><td>SigLIP2 跑实拍图（224×224）</td><td class="num">0 / 4，全判「单肩包」</td><td>域差</td></tr>
+            <tr><td>实拍图先降采样到 28×28 灰度再放大</td><td class="num">仍 0 / 4</td><td><b>不是分辨率问题，是图像域问题</b></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="note">
+        <b>根因</b>：SigLIP2 是在 Fashion-MNIST 的<strong>白底平铺小图</strong>上微调的，
+        它学到的是「小图中央的深色块 = 包」。真人穿着的照片缩到 224×224 后语义完全变了。
+        <br><br>
+        <b>由此得出的工程判断</b>：<strong>公开指标高 ≠ 你的场景能用。</strong>
+        所以后端优先级不按模型强弱排，而按<strong>在自己业务数据上的实测效果</strong>排 ——
+        建立后端可信度注册表，只有业务数据实测达标的后端才允许参与决策，并做多后端交叉验证。
+        主判定原型 KNN 在真实商品照上正确识别率上升到 <b>98%</b>，单张端到端约 10ms。
+        <br><br>
+        另一个细节：不可信后端不再被加载，延迟从 300ms 降到 <b>11ms</b> ——
+        「不采信」本身就是性能优化。
+      </div>
+
+      <h4>评测结果</h4>
+      <div class="tbl-scroll">
+        <table>
+          <thead><tr><th>用例类型</th><th class="num">通过/总数</th><th class="num">准确率</th><th>验证什么</th></tr></thead>
+          <tbody>
+            <tr><td>intent</td><td class="num">3 / 3</td><td class="num">100%</td><td>意图路由</td></tr>
+            <tr><td>tag_norm</td><td class="num">4 / 4</td><td class="num">100%</td><td>标签归一规则</td></tr>
+            <tr><td>comment_topic</td><td class="num">3 / 3</td><td class="num">100%</td><td>评论主题归纳</td></tr>
+            <tr><td>advice_evidence</td><td class="num">1 / 1</td><td class="num">100%</td><td>证据闭环</td></tr>
+            <tr><td>tool_args</td><td class="num">1 / 1</td><td class="num">100%</td><td>参数安全</td></tr>
+            <tr><td><b>总体</b></td><td class="num"><b>12 / 12</b></td><td class="num"><b>100%</b></td><td>—</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="note">
+        <b>口径说明</b><br>
+        上述指标衡量的是 <strong>Agent 编排层的稳定性</strong>
+        （意图路由、标签归一规则、工具契约、证据闭环、参数安全），
+        <strong>不是两个模型本身的分类准确率</strong>。
+        兜底后端下图像分类准确率有限，这类结果会因低置信而被自动转人工 ——
+        <strong>这是治理机制生效，不是缺陷</strong>。
+      </div>
+
+      <div class="note note-warn">
+        <b>业务侧测算口径</b><br>
+        按店铺月均上新约 300 款、月评论约 2000 条测算，
+        月度重复性人工工时减少约 <b>22 小时</b>（约 3 个工作日）；
+        按当地兼职时薪约 20 元估算，月节省人力成本约 <b>400~500 元</b>。
+        错标返工率由约 8% 降至 2% 以下，评论问题发现周期由「周级」缩短到「日级」。
+      </div>
+    </div>
+
+    <!-- ---------- 项目 4：食品研发 ---------- -->
+    <div class="card">
+      <div class="proj-head">
+        <h3>食品研发智能决策系统 <span class="tag tag-design">毕设衍生</span></h3>
+        <div class="proj-meta">
+          <span class="mono">毕业设计（2025.07 前）</span>
+          <span>Scikit-learn / GPR / SHAP / 贝叶斯优化 / SciPy</span>
+          <span>27 组实验数据 · 独立完成</span>
+        </div>
+      </div>
+
+      <p>
+        基于毕业设计的 29 组实验数据（9 组单因素 + 18 组正交），
+        把辣酱配方研发从「经验试错」变成「模型预测 + 定向优化」。
+      </p>
+
+      <div class="tbl-scroll">
+        <table>
+          <thead><tr><th>模块</th><th>做法</th><th>结果</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>配方优化</td>
+              <td>分层建模：单因素 → 二次拟合（边际效应），正交 → GPR（全局稀疏高维）</td>
+              <td>留一验证 R²=0.642 / MAE=1.93 分；推荐 5 个新配方，<b>预测评分高于实验最优值</b></td>
+            </tr>
+            <tr>
+              <td>货架期预测</td>
+              <td>用菌落总数生长曲线（Logistic）预测保质期</td>
+              <td>R²=0.9915，预测 <b>7.4 天</b>达 10⁵ CFU/g，与实验观察一致</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="note">
+        <b>最有价值的技术判断：数据要分开建模</b><br>
+        两类数据的<strong>生成机制不统一</strong>（单因素是局部变化，正交是全局变化），
+        混在一张拟合面上会互相干扰，<strong>R² 会变负</strong>。
+        分开处理后各自发挥优势。<br><br>
+        为什么选 GPR 而不是随机森林？<strong>因为 GPR 提供不确定性估计</strong> ——
+        贝叶斯优化需要同时知道「候选点的预测值」和「预测值的不确定度」，
+        才能用采集函数（EI/UCB）决定往哪探索。
+        9 个样本做 GPR，虽然数据少，但每个预测点都带着标准差，
+        优化器就能在「有希望但不确定」的区域多看几眼 ——
+        这比在稀疏数据上硬套一个没有不确定性的模型靠谱得多。
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 怎么做的 ==================== -->
+<section id="how">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">04 / How I Work</div>
+      <h2>我是怎么做的</h2>
+      <p>上面是结果，这里是过程。我的工作方式可以概括成一句：<strong>让 AI 产出候选，让机器决定什么算对，让脚本保证结论不漂移。</strong></p>
+    </div>
+
+    <div class="card">
+      <h4>四步闭环</h4>
+      <div class="arch">   <b>① 先定义「对」是什么</b>
+   写出可执行的判定标准（测试、脚本、指标）
+   判定标准不成立时，不接受任何 AI 产出
+                    │
+                    ▼
+   <b>② 让 AI 在约束下产出</b>
+   上下文给足：相关文件 · 已有模式 · 明确的失败案例
+   一次只让它改一件事
+   要求它自己先说清楚「怎么验证」
+                    │
+                    ▼
+   <b>③ 用机器验证，不靠「看着对」</b>
+   pytest / 验证脚本 / 实跑 Demo
+   失败就回到 ① —— 判定标准本身可能有问题
+                    │
+                    ▼
+   <b>④ 把结论固化成可复核的证据</b>
+   提交信息写「为什么」不只写「改了什么」
+   实验记录进 docs/，数字进核对器
+   失败也写进 docs/</div>
+
+      <div class="note">
+        <b>这个闭环最关键的是第 ① 步。</b>
+        很多用法是「让 AI 写代码 → 看着像对的 → 提交」。
+        问题在于<strong>「看着对」不是判定标准</strong>。
+        <br><br>
+        我自己的例子：让 AI 写了个弃答检测器（判断模型是否拒答），逻辑通顺。
+        但用 47 条评测集里的真实答案验证时，第一版漏 20 条，第二版误报 29 条 ——
+        改到第五版还在 0.787~0.957 之间震荡。
+        <br><br>
+        真正的问题不是「规则没写好」，而是<strong>「弃答是语义判断，不是字符串匹配」</strong> ——
+        我一开始的整个思路就错了。最终改成复用已有的 LLM judge 基础设施。
+        <br><br>
+        <strong>如果第 ① 步就定义好判定标准，前四版根本不会存在。</strong>
+      </div>
+    </div>
+
+    <div class="card">
+      <h4>验证机制：三道防线 + 两个核对器</h4>
+      <div class="tbl-scroll">
+        <table>
+          <thead><tr><th>机制</th><th>解决什么</th><th>怎么设计的</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><b>上下文指纹</b></td>
+              <td>判断「这轮评测是不是空跑」</td>
+              <td>只哈希检索结果，<b>不含答案与分数</b> —— 否则分数一变指纹就变，空跑检测立刻失效</td>
+            </tr>
+            <tr>
+              <td><b>空跑阻断</b></td>
+              <td>防止把空跑的结论写进文档</td>
+              <td>指纹一致就报「<b>不能作结论</b>」而不是报「这是空跑」—— 只做阻断不做证明：阻断代价是多跑一次，漏报代价是写出错误结论</td>
+            </tr>
+            <tr>
+              <td><b>噪声底</b></td>
+              <td>判断差异是不是抖动</td>
+              <td>0.10 —— <b>单次 A/B 差值只是抖动幅度的下界，不是幅度本身</b>。差值分布有方差，两次恰好接近不代表常态如此</td>
+            </tr>
+            <tr>
+              <td><b>事实核对器</b></td>
+              <td>保证文档里的数字不漂移</td>
+              <td>从<b>数据源</b>（不是从文档）重算关键数字，再回文档检查是否出现且一致。核对器<b>自己不算进</b>「我写了多少验证工具」</td>
+            </tr>
+            <tr>
+              <td><b>JS 语法门禁</b></td>
+              <td>防止「页面能开但点了没反应」</td>
+              <td>抽 <code><script></code> 喂 <code>node --check</code>。检查「东西在不在」不等于检查「东西能不能用」</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="note">
+        <b>验收脚本最容易被忽略的一点</b>：规则本身错了会让核对器变成只会刷 FAIL 的工具，
+        而一个老在报错的检查工具，<strong>用两次就没人信它了</strong>。
+        所以我的核对器区分「<b>没写</b>」（跳过，那是信息缺失）和「<b>写错</b>」（FAIL，那才是数据错误）。
+        <br><br>
+        目前 <code>verify_story_numbers.py</code> 仍有 <b>1 项 FAIL</b>（脚本计数口径 54 vs 55）——
+        我<b>没有把它藏起来，也没把规则改成永远通过</b>。
+        <strong>FAIL 本身就是信息</strong>：它告诉我两处文档用了不同的计数口径。
+      </div>
+    </div>
+
+    <div class="card">
+      <h4>我用 AI 的工具链</h4>
+      <div class="stack-grid">
+        <div class="stack-item" style="padding:16px 18px">
+          <h4>编码与编排</h4>
+          <p>Trae IDE 多模型 Agent（架构设计、跨文件重构、批量改造）·
+             终端 Agent（跑批处理、生成并执行验证脚本）·
+             Agent Explore 子代理（开放式检索，主上下文只留结论）</p>
+        </div>
+        <div class="stack-item" style="padding:16px 18px">
+          <h4>协议与集成</h4>
+          <p>自建 <b>MCP Server</b>：把项目里的文书改动检测暴露给任意 MCP 客户端，
+             不必先起服务、走 HTTP、发鉴权头。
+             <br>踩过的坑：MCP SDK 2.x 把 <code>FastMCP</code> 改名为 <code>MCPServer</code></p>
+        </div>
+        <div class="stack-item" style="padding:16px 18px">
+          <h4>质量门禁</h4>
+          <p>ruff + mypy + pytest（<b>275 测试</b>）·
+             GitHub Actions（3 个 Python 版本矩阵）·
+             <b>55 个验证脚本</b>固化关键结论</p>
+        </div>
+        <div class="stack-item" style="padding:16px 18px">
+          <h4>上下文管理</h4>
+          <p>Agent Explore 子代理做开放式搜索 ·
+             写进代码注释的是<b>为什么这么判</b>（含失败原因）而不是只写结论 ·
+             事实核对器把文档与数据源绑在一起</p>
+        </div>
+      </div>
+
+      <div class="note">
+        <b>一句话</b>：工具会换，模型会换，这个闭环不会。
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 工程判断力 ==================== -->
+<section id="judgment">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">05 / Judgment</div>
+      <h2>工程判断力</h2>
+      <p>技术栈谁都会写，判断力才是差异。以下五件事是我在项目里真实做过的判断 —— 每件都能被追问下一层。</p>
+    </div>
+
+    <div class="story">
+      <div class="story-h">
+        <span class="story-n">01</span>
+        <h3>三轮评测全是空跑，而我把结论写进了文档</h3>
+        <span class="story-tag">工程素养</span>
+      </div>
+      <div class="story-b">
+        <p>连续跑了三轮评测，分数有涨有跌，看着挺合理，我就写了结论。</p>
+        <p>后来逐条比对检索结果，发现<strong>三轮的上下文逐字完全相同</strong> ——
+        检索层压根没变，分数差异 100% 来自 LLM 打分随机性，实测抖动约 0.021。
+        而我当时观察到的变化是 0.004~0.021，<strong>全在抖动量级以内</strong>。</p>
+        <p>更糟的是我把这个结论写进了文档，而那个文档后来成了我面试时讲的素材。</p>
+        <p style="margin-bottom:0">
+          补了三道机制：上下文指纹（只哈希检索结果，不含答案与分数 ——
+          否则分数一变指纹就变，空跑检测立刻失效）、
+          空跑阻断（指纹一致就报「不能作结论」而不是报「这是空跑」——
+          我不保证指纹相同就一定是空跑，所以只做阻断不做证明；
+          阻断的代价只是多跑一次，指纹不同的漏报代价是写出错误结论）、
+          噪声底。
+        </p>
+      </div>
+    </div>
+
+    <div class="story">
+      <div class="story-h">
+        <span class="story-n">02</span>
+        <h3>改一个常量，动了整个检索链路</h3>
+        <span class="story-tag">技术深度</span>
+      </div>
+      <div class="story-b">
+        <p>做精排 A/B 时，我发现一轮改动「零效果」—— 结果与前一轮逐位相同。
+        按经验这说明诊断方向错了，于是换了个方向试，<strong>依然零效果</strong>。</p>
+        <p>第三次我不再改参数，而是去看候选池重叠度，
+        发现 <code>top5 完全相同仅 8/47</code>、<strong>集合大变 13/47</strong> ——
+        召回阶段就变了。</p>
+        <p style="margin-bottom:0">
+          根因：<code>_IDF_MAX</code> 这个常量<strong>被 BM25 召回和精排排序共用了</strong>。
+          改一个数，同时动了两处。而我的 A/B 脚本里写的「只切精排这一个变量」<strong>是错的</strong>。
+          拆成两个独立常量后重跑，recall 更差 —— 证明我「BM25 被牵连」的猜测也是错的。
+        </p>
+      </div>
+    </div>
+
+    <div class="story">
+      <div class="story-h">
+        <span class="story-n">03</span>
+        <h3>模型会编造法条号，可溯源率只有 20%</h3>
+        <span class="story-tag">业务落地</span>
+      </div>
+      <div class="story-b">
+        <p>做端到端 Demo 时我顺手做了溯源核对 ——
+        答案里引用的条款号，能不能在检索片段里找到？</p>
+        <p>结果 10 个问答里只有约 <strong>20% 可溯源</strong>。最严重的一条：</p>
+        <pre><span class="c">问：  消防救援机构有哪些职责</span>
+答：  ...第四条 / 第四十五条 / 第五十三条...
+
+<span class="c">检索实际返回的片段里只有：</span>
+      第十五条 / 第六十条 / 第六十二条 / 第六十四条 / 第四十七条</pre>
+        <p>四个条款号，<strong>三个是编的</strong>。而且同一问题跑两次结果还不同 ——
+        这是随机波动，不是稳定能力。</p>
+        <p style="margin-bottom:0">
+          为什么这个发现比「准确率 100%」更有价值？
+          消防执法文书有法律效力，编造的条款号会直接影响法律适用，
+          轻则文书被退回，重则执法依据站不住。
+          <strong>所以我不回避，而是把它讲清楚，并说明配套机制。</strong>
+        </p>
+        <p style="margin-bottom:0">
+          配套三道防线落地后，<strong>引用可溯源率从 20% 提升到 87%</strong>，
+          人工复核返工率同步下降 65%。
+          但我不说「问题解决了」——
+          剩下的 13% 恰恰是最难的那部分：
+          <strong>模型确实不确定时，它是否知道自己不确定。</strong>
+          这也是我把弃答判定做成三态（可答 / 存疑 / 未知）的原因。
+        </p>
+      </div>
+    </div>
+
+    <div class="story">
+      <div class="story-h">
+        <span class="story-n">04</span>
+        <h3>优雅降级把依赖缺失藏起来了</h3>
+        <span class="story-tag">系统思维</span>
+      </div>
+      <div class="story-b">
+        <p>Agent3 原本在 <strong>import 阶段</strong>就因缺 <code>DASHSCOPE_API_KEY</code>
+        抛 RuntimeError，导致无密钥时整个 Agent3 无法启动。</p>
+        <p>看起来是「优雅降级」，实际上是<strong>把依赖缺失变成了一个延迟爆炸的哑弹</strong>：
+        构建期完全静默，只有 run 才暴露；
+        而 agent2 还硬编码了 <code>/home/geng/.../faster-whisper-small</code>
+        和 <code>D:\Docker\vosk\...</code>，换机必然失效。</p>
+        <p style="margin-bottom:0">
+          改为 <code>require_dashscope()</code> / <code>require_baidu()</code>
+          在<strong>实际调用时</strong>校验，硬编码路径改为配置项 + 平台探测。
+          <br><br>
+          同类问题还有：<code>multimodal_orchestrator.py</code> 虽标 legacy 但被 gateway 实际引用，
+          直接删会炸；<code>shutil.rmtree</code> 原本只在 try 内，异常时临时目录泄漏。
+          <strong>删除前必查引用</strong> —— 这是那 8 阶段改造里最不起眼但最有用的一条规矩。
+        </p>
+      </div>
+    </div>
+
+    <div class="story">
+      <div class="story-h">
+        <span class="story-n">05</span>
+        <h3>验证工具本身也需要被验证</h3>
+        <span class="story-tag">方法论</span>
+      </div>
+      <div class="story-b">
+        <p>我写了 55 个验证脚本，但其中<strong>有三个脚本自己出过 bug，
+        其中两个报的是假问题</strong> —— 我去改了本来正确的代码。</p>
+        <p>后来我写了两个<strong>事实核对器</strong>：从数据源（不是从文档）重新算出关键数字，
+        再回文档里检查是否出现且一致。</p>
+        <p style="margin-bottom:0">
+          设计上有两个刻意选择：<br>
+          ① <strong>核对器自己不算进「我写了多少验证工具」</strong> ——
+          它统计的目录里包含它，每加一个工具数字就变一次，文档永远「过期」；
+          更糟的是那个数字会变成「我什么时候跑了这个核对」。<br>
+          ② <strong>区分「没写」和「写错」</strong> —— 文档没提这项就跳过（信息缺失，不是数据错误），
+          提了但对不上才 FAIL。<br>
+          因为<strong>规则本身错了会让核对器变成只会刷 FAIL 的工具</strong>，
+          而一个老在报错的检查工具，用两次就没人信它了。
+        </p>
+      </div>
+    </div>
+
+    <div class="quote">
+      这五件事串起来是同一类问题：<strong>我以为我知道自己在做什么，其实不知道。</strong>
+      <br><br>
+      <em>区别只在于，我后来学会了在优化之前先验证测量方法本身是有效的。</em>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 技术栈 ==================== -->
+<section id="stack">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">06 / Stack</div>
+      <h2>技术栈</h2>
+      <p>只列真正在项目里用过的。技术列表本身不构成说服力 —— 它和上面的判断配对才有意义。</p>
+    </div>
+
+    <div class="stack-grid">
+      <div class="stack-item">
+        <h4>Agent 与编排</h4>
+        <p>LangGraph 状态图（显式合法转换表，非法转换直接抛错）·
+           LangChain · 多 Agent 编排与条件路由 ·
+           Function Calling（参数白名单校验）· Human-in-the-loop ·
+           MCP Server（把项目能力暴露给任意 MCP 客户端）</p>
+      </div>
+      <div class="stack-item">
+        <h4>检索与存储</h4>
+        <p>FAISS / Milvus · BM25 稀疏检索 · RRF 融合召回 ·
+           IDF 加权精排 · 条款级与目录条目级语义分块 ·
+           元数据硬过滤 · 感知哈希（pHash）· Redis · SQLite / PostgreSQL</p>
+      </div>
+      <div class="stack-item">
+        <h4>模型与评测</h4>
+        <p>DeepSeek（主）+ 通义千问（备）· Ollama bge-large-zh · Whisper ASR ·
+           YOLO + OCR · VLM 语义核验 · RAGAS + 自研 LLM-as-judge ·
+           Gaussian Process Regression · SHAP · 贝叶斯优化</p>
+      </div>
+      <div class="stack-item">
+        <h4>工程与运维</h4>
+        <p>FastAPI / Flask · Docker Compose（7 容器）· Prometheus（11 指标）·
+           Grafana（24 面板）· OpenTelemetry · Langfuse ·
+           三态熔断 · token 预算闸门 · ruff / mypy / pytest（275 测试）</p>
+      </div>
+      <div class="stack-item">
+        <h4>视觉与 NLP</h4>
+        <p>PyTorch · OpenCV（透视变换、边缘检测、目标检测数据合成）·
+           BERT · CNN · Attention · Focal Loss · ONNX / OpenVINO / TensorRT</p>
+      </div>
+      <div class="stack-item">
+        <h4>方法论</h4>
+        <p>评测可信度机制（上下文指纹 / 空跑阻断 / 噪声底）·
+           引用溯源检测（ok / fuzzy / fabricated）· 弃答三态 ·
+           事实核对器 · A/B 变量隔离与候选池重叠度分析</p>
+      </div>
+    </div>
+
+    <div class="note">
+      <b>关于「精通」这个词</b><br>
+      我不写「精通」。上面每一项都能被追问出下一层，
+      而写不出追问的，就是凑数的。
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 联系 ==================== -->
+<section id="contact">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">07 / Contact</div>
+      <h2>联系我</h2>
+    </div>
+
+    <div class="card">
+      <div class="resume-box" style="background:#fff">
+        <p style="margin-top:0">
+          <strong>庚雪鑫</strong> · AI 应用 / Agent 工程师<br>
+          哈尔滨理工大学 · 食品科学与工程（工学学士）· 人力资源管理（管理学学士·辅修）<br>
+          <span style="color:var(--fg-3);font-size:13.5px">2021.09 – 2025.07</span>
+        </p>
+        <p style="margin-bottom:0">
+          ✉ 18697064695@163.com ·
+          ☎ (+86) 18697064695 ·
+          <a href="https://github.com/gengxuexin">github.com/gengxuexin</a>
+        </p>
+      </div>
+
+      <h4>三个开源仓库</h4>
+      <div class="tbl-scroll">
+        <table>
+          <thead><tr><th>项目</th><th>定位</th><th>规模</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><a href="https://github.com/gengxuexin/inspection-multi-agent-fire-agents">inspection-multi-agent-fire-agents</a></td>
+              <td>消防智能执法多模态 Agent 系统</td>
+              <td>19,643 行 · 275 测试 · 34 端点</td>
+            </tr>
+            <tr>
+              <td><a href="https://github.com/gengxuexin/inspection-multi-agent-foodfactory-agents">inspection-multi-agent-foodfactory-agents</a></td>
+              <td>巡检整改多 Agent 闭环系统</td>
+              <td>5,381 行 · 31 测试 · 三套离线评测</td>
+            </tr>
+            <tr>
+              <td><a href="https://github.com/gengxuexin/SECOND-DIMENSION_Agents">SECOND-DIMENSION_Agents</a></td>
+              <td>服装门店与网店智能运营多 Agent 助手</td>
+              <td>4,338 行 · 25 测试 · 12 用例评测</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="cta" style="margin-top:22px;margin-bottom:0">
+        <a class="btn btn-primary" href="https://github.com/gengxuexin">GitHub 主页</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>庚雪鑫 · AI 应用 / Agent 工程师</span>
+    <span class="mono">18697064695@163.com</span>
+    <span class="mono">github.com/gengxuexin</span>
+  </div>
+</footer>
+
+</body>
+</html>

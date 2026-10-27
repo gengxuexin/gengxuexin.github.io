@@ -1,0 +1,5 @@
+# 部署包里不需要的东西
+*.ps1
+*.sh
+_check_links.py
+__pycache__/
