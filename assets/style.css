@@ -392,6 +392,85 @@ tr:last-child td { border-bottom: none; }
   flex-shrink: 0;
 }
 
+/* ---------- 软实力（我是个怎样的人） ----------
+   设计要点：这一节讲的是「人」而不是「技术」，
+   所以用左边框 + 序号 + 独立的「对应实践」块，
+   与「核心竞争力」的三栏卡（stack-grid）明确区分开。 */
+.soft-intro {
+  border-left: 3px solid var(--accent);
+  background: var(--accent-soft);
+}
+.soft-intro p { margin-bottom: 12px; }
+
+.soft-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+  gap: 18px;
+  margin-top: 18px;
+}
+.soft-item {
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--line-2);
+  border-radius: var(--r);
+  padding: 18px 20px 16px;
+  background: #fff;
+}
+.soft-item-wide {
+  grid-column: 1 / -1;
+}
+/* 第 8 条是全站的「立场陈述」，单独用强调样式 */
+.soft-item-final {
+  border-left-color: var(--accent);
+  background: var(--bg-soft);
+}
+.soft-h {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 9px;
+}
+.soft-n {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--accent);
+  flex-shrink: 0;
+  font-weight: 600;
+}
+.soft-h h3 { margin: 0; font-size: 15.5px; font-weight: 620; }
+.soft-item > p {
+  font-size: 14.5px;
+  line-height: 1.78;
+  color: var(--fg-2);
+  margin: 0 0 12px;
+}
+.soft-item > p:last-of-type { margin-bottom: 0; }
+
+/* 「对应实践」—— 把软实力锚到可验证的事实上 */
+.soft-ev {
+  margin-top: 14px;
+  padding: 11px 13px;
+  background: var(--bg-soft);
+  border-radius: 7px;
+  font-size: 13.5px;
+  line-height: 1.72;
+  color: var(--fg-2);
+}
+.soft-item-final .soft-ev { background: #fff; }
+.soft-ev b { color: var(--fg); font-weight: 620; }
+.soft-ev-l {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: .08em;
+  color: var(--accent);
+  background: var(--accent-soft);
+  border-radius: 4px;
+  padding: 1px 6px;
+  margin-right: 7px;
+  vertical-align: 1px;
+}
+.soft-ev-wide { font-size: 14px; }
+
 /* ---------- 技术栈 ---------- */
 .stack-grid {
   display: grid;
@@ -458,6 +537,11 @@ footer .mono { font-family: var(--mono); }
   .card { padding: 20px 18px; }
   .story-h, .story-b { padding-left: 18px; padding-right: 18px; }
   .nav-links { gap: 16px; }
+  .soft-grid { grid-template-columns: 1fr; }
+  .soft-item { padding: 16px 16px 14px; }
+  .soft-h { flex-direction: column; gap: 4px; }
+  .soft-ev { padding: 10px 11px; }
+  .soft-ev-l { margin-right: 5px; margin-bottom: 4px; }
 }
 
 /* ---------- 打印 ---------- */

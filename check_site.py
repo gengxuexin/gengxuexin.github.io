@@ -33,7 +33,7 @@ PORT = 9360
 
 # 站点必须存在的区块（顺序也检查）
 EXPECTED_SECTIONS = [
-    "strengths", "about", "projects", "how",
+    "strengths", "soft", "about", "projects", "how",
     "judgment", "stack", "contact",
 ]
 
@@ -105,7 +105,7 @@ async def main():
                             .map(a=>a.getAttribute('href').slice(1)),
                   scriptCount: document.querySelectorAll('script').length,
                   scriptsWithMarkup: Array.from(document.querySelectorAll('script'))
-                    .filter(s=>/<\/?(td|tr|table|div|p|section|a|li)\b/i
+                    .filter(s=>/<\/?(?:td|tr|table|div|p|section|a|li)\b/i
                                  .test(s.textContent||''))
                     .map(s=>(s.textContent||'').slice(0,80)),
                   bodyH: document.body.scrollHeight
