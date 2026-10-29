@@ -23,6 +23,7 @@
       <a href="#how">怎么做的</a>
       <a href="#judgment">工程判断力</a>
       <a href="#stack">技术栈</a>
+      <a href="#roadmap">优化方向</a>
       <a href="#contact">联系</a>
     </div>
   </div>
@@ -79,7 +80,7 @@
         <p>
           具备网关鉴权限流、微服务编排、Docker 容器化、
           Prometheus / Grafana 可观测性建设经验。
-          单项目全量单元测试 <b>275 项通过</b>，<b>50+ 个验证脚本</b>固化关键结论。
+          单项目全量单元测试 <b>393 项通过</b>，<b>57 个验证脚本</b>固化关键结论。
         </p>
       </div>
       <div class="stack-item" style="padding:20px 22px">
@@ -157,7 +158,7 @@
         <div class="soft-ev">
           <span class="soft-ev-l">对应实践</span>
           三个项目都是<strong>从零开始自己摸</strong>：消防项目 <b>19,643 行</b>、
-          <b>275 个测试</b>，从分块策略到评测可信度机制全是自己试出来的。
+          <b>393 个测试</b>，从分块策略到评测可信度机制全是自己试出来的。
           没人教过我「上下文指纹」该怎么设计 —— 是被三轮空跑评测逼出来的。
         </div>
       </div>
@@ -415,7 +416,7 @@
         <div class="proj-meta">
           <span class="mono">2026.05 – 2026.10 · 深兰科技</span>
           <span>Python / FastAPI / LangGraph / FAISS</span>
-          <span>19,643 行 · 275 测试 · 55 验证脚本</span>
+          <span>19,643 行 · 393 测试 · 57 验证脚本</span>
           <a href="https://github.com/gengxuexin/inspection-multi-agent-fire-agents">github.com/gengxuexin/inspection-multi-agent-fire-agents ↗</a>
         </div>
       </div>
@@ -438,7 +439,7 @@
           而我当时把那个结论写进了文档。遂建立三道机制：
           <strong>上下文指纹</strong>（只哈希检索结果，不含答案与分数）、
           <strong>空跑阻断</strong>（指纹一致只报「不能作结论」，不报「这是空跑」）、
-          <strong>噪声底 0.10</strong>（单次 A/B 差值只是抖动幅度的下界，不是幅度本身）。
+          <strong>噪声底 0.05</strong>（单次 A/B 差值只是抖动幅度的下界，不是幅度本身）。
           相关逻辑 30 个单元测试覆盖。
         </li>
         <li>
@@ -877,9 +878,86 @@
         而一个老在报错的检查工具，<strong>用两次就没人信它了</strong>。
         所以我的核对器区分「<b>没写</b>」（跳过，那是信息缺失）和「<b>写错</b>」（FAIL，那才是数据错误）。
         <br><br>
-        目前 <code>verify_story_numbers.py</code> 仍有 <b>1 项 FAIL</b>（脚本计数口径 54 vs 55）——
-        我<b>没有把它藏起来，也没把规则改成永远通过</b>。
-        <strong>FAIL 本身就是信息</strong>：它告诉我两处文档用了不同的计数口径。
+        <code>verify_story_numbers.py</code> 最初报过 <b>FAIL</b>（脚本按目录数是 55 个、
+        文档写 54 个）—— 我<b>没有把它藏起来，也没把规则改成永远通过</b>。
+        <strong>FAIL 本身就是信息</strong>：它告诉我两处用了不同的计数口径。
+        现在两边口径统一了：<b>57 个工具脚本</b>，
+        文档里的测试数也同步为实测的 <b>393 个</b>。
+        <br><br>
+        但我保留这个检查脚本 —— 因为<strong>数字会漂</strong>。
+        今天不改口径，明天加一个测试文件，文档里的数字就又错了。
+      </div>
+    </div>
+
+<!-- ==================== 上线前风险治理（新增到「怎么做的」区）==================== -->
+    <div class="card">
+      <h4>上线前风险治理：让系统在上生产前先扛住该扛的</h4>
+      <p>
+        前面是「怎么把功能做对」，这一块是<strong>怎么让它在生产环境不出事</strong>。
+        我按「上线会出什么问题」逐条过一遍，每条都落成了代码和测试 ——
+        不是加一层包装，而是把故障路径显式写出来。
+      </p>
+
+      <div class="stack-grid" style="margin-top:16px;grid-template-columns:repeat(auto-fit,minmax(320px,1fr))">
+        <div class="stack-item" style="padding:16px 18px">
+          <h4>上游不可达时请求不应整体失败</h4>
+          <p>模型网关偶发 5xx / 限流 / 密钥失效时，整条链路会 500 掉 ——
+             执法员填了一半的文书就没了。<br>
+             <strong>做法</strong>：熔断 + 指数退避重试 + 三级降级
+             （切本地模型 → 退纯检索结果 → 明确报错），
+             超时从 600 秒收紧到 30 秒。</p>
+        </div>
+        <div class="stack-item" style="padding:16px 18px">
+          <h4>法规改版后旧条文不能继续被引用</h4>
+          <p>增量更新只增不删 → 同一份文件的新旧两版同时在索引里 →
+             模型可能引用<strong>已作废</strong>的条款写进处罚文书。<br>
+             <strong>做法</strong>：索引状态从「文件指纹」升级为
+             「文件 + 块 ID」映射，改版时先删旧块再插新块，
+             并支持清理孤儿块。</p>
+        </div>
+        <div class="stack-item" style="padding:16px 18px">
+          <h4>不同权限必须检索到不同范围</h4>
+          <p>按部门、密级、时效三维过滤法规 ——
+             涉密文件不该被低权限用户看到，废止条款不该再被引用。<br>
+             <strong>做法</strong>：过滤表达式下沉到向量库查询层，
+             并配齐覆盖全密级 × 部门 × 有效期的可见性矩阵测试。</p>
+        </div>
+        <div class="stack-item" style="padding:16px 18px">
+          <h4>高危改动不能只靠「请复核」这句话</h4>
+          <p>文书审批原本会检测高风险改动，但照样批准，只在返回消息里提示一下 ——
+             而文书<strong>已经归档成终稿了</strong>。<br>
+             <strong>做法</strong>：改为事前拦截 ——
+             检测到高风险就<strong>不动文件</strong>，
+             要求人工确认后才放行；无风险则直接通过，不增加摩擦。</p>
+        </div>
+        <div class="stack-item" style="padding:16px 18px">
+          <h4>执法留痕不能静默丢失</h4>
+          <p>审计日志写失败原本只提示一次就吞掉 ——
+             事后追责才发现「那天没有记录」，而业务当时全返回 200。<br>
+             <strong>做法</strong>：写失败进死信队列 + 指标告警 + 同步落盘，
+             进程被 kill 也不丢最后几行。</p>
+        </div>
+        <div class="stack-item" style="padding:16px 18px">
+          <h4>内网离线环境要能部署</h4>
+          <p>政务执法场景多为内网或涉密环境，云端 API <strong>根本连不上</strong> ——
+             不是「慢一点」，是「完全不可达」。<br>
+             <strong>做法</strong>：provider 模式切换（云端 / 本地 / 混合），
+             配本地模型供给引导 ——
+             精度不够时提示换更准的模型，并检测本地是否已装，
+             让用户选「自动下载」或「按指引自行下载」。</p>
+        </div>
+      </div>
+
+      <div class="note">
+        <b>这一块的共同点</b>：每条都不是「加个 try-catch」，
+        而是<strong>先想清楚失败时会怎样，再决定失败的样子</strong>。
+        <br><br>
+        举个具体的例子：审批拦截我第一版写成「移动 → 拦截 → 回滚」，
+        但回滚本身可能失败（磁盘满、权限变更、并发操作），
+        结果就是文书停在终稿目录、状态却还是待审批 ——
+        <strong>比不改更糟</strong>。
+        改成「先判断、通过了才移动」之后，拦截路径上一个文件都没动过，
+        不存在需要回滚的状态。
       </div>
     </div>
 
@@ -900,9 +978,9 @@
         </div>
         <div class="stack-item" style="padding:16px 18px">
           <h4>质量门禁</h4>
-          <p>ruff + mypy + pytest（<b>275 测试</b>）·
+          <p>ruff + mypy + pytest（<b>393 测试</b>）·
              GitHub Actions（3 个 Python 版本矩阵）·
-             <b>55 个验证脚本</b>固化关键结论</p>
+             <b>57 个验证脚本</b>固化关键结论</p>
         </div>
         <div class="stack-item" style="padding:16px 18px">
           <h4>上下文管理</h4>
@@ -1036,7 +1114,7 @@
         <span class="story-tag">方法论</span>
       </div>
       <div class="story-b">
-        <p>我写了 55 个验证脚本，但其中<strong>有三个脚本自己出过 bug，
+        <p>我写了一整套验证脚本，但其中<strong>有三个脚本自己出过 bug，
         其中两个报的是假问题</strong> —— 我去改了本来正确的代码。</p>
         <p>后来我写了两个<strong>事实核对器</strong>：从数据源（不是从文档）重新算出关键数字，
         再回文档里检查是否出现且一致。</p>
@@ -1094,7 +1172,7 @@
         <h4>工程与运维</h4>
         <p>FastAPI / Flask · Docker Compose（7 容器）· Prometheus（11 指标）·
            Grafana（24 面板）· OpenTelemetry · Langfuse ·
-           三态熔断 · token 预算闸门 · ruff / mypy / pytest（275 测试）</p>
+           三态熔断 · token 预算闸门 · ruff / mypy / pytest（393 测试）</p>
       </div>
       <div class="stack-item">
         <h4>视觉与 NLP</h4>
@@ -1117,11 +1195,121 @@
   </div>
 </section>
 
+<!-- ==================== 优化方向 ==================== -->
+<section id="roadmap">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-num">08 / Roadmap</div>
+      <h2>优化方向</h2>
+      <p>这套系统已经跑通了「能上线、能验证、能不出事」。
+      下面是<strong>接下来打算把它推到哪里</strong> ——
+      每一条都对应一个具体的能力缺口，而不是笼统的「持续优化」。</p>
+    </div>
+
+    <div class="stack-grid" style="grid-template-columns:repeat(auto-fit,minmax(320px,1fr))">
+      <div class="stack-item" style="padding:20px 22px">
+        <h4 style="color:var(--fg);text-transform:none;letter-spacing:0;font-size:15px">01 · 检索层：从「能召回」到「召得准」</h4>
+        <p>
+          当前检索层的改进空间集中在<strong>跨文档综合类问题</strong> ——
+          这类问题需要同时命中多份法规的关联条款，单路召回容易漏。
+        </p>
+        <p>
+          <strong>方向</strong>：引入查询分解与多路联合召回，
+          把「一个问题需要查几份文件」变成显式决策；
+          对已识别的弱类别单独调参，而不是全局调参 ——
+          全局调参会被噪声底淹没，看不出改动到底有没有用。
+        </p>
+      </div>
+
+      <div class="stack-item" style="padding:20px 22px">
+        <h4 style="color:var(--fg);text-transform:none;letter-spacing:0;font-size:15px">02 · 评测体系：从「测得出」到「测得准」</h4>
+        <p>
+          现在的评测集规模还不足以支撑细粒度的 A/B 判断 ——
+          差异小于噪声底时，结论不成立。
+        </p>
+        <p>
+          <strong>方向</strong>：按真实执法场景的问题类型分层扩样，
+          每层独立统计；同时把<strong>弃答样本单独成组</strong>，
+          因为弃答样本的检索相关性指标恒为零，
+          混在一起会让总分同时反映「检索能力」和「弃答策略」两件事 ——
+          拆开才看得清该优化哪个。
+        </p>
+      </div>
+
+      <div class="stack-item" style="padding:20px 22px">
+        <h4 style="color:var(--fg);text-transform:none;letter-spacing:0;font-size:15px">03 · 治理：从「人工确认」到「分级授权」</h4>
+        <p>
+          高危操作现在统一要求人工确认 —— 安全，但随业务量增长会成为瓶颈。
+        </p>
+        <p>
+          <strong>方向</strong>：把操作按风险分级，
+          查询类自动执行、可逆操作单人确认、不可逆操作双人复核；
+          并引入审批权限分离 —— <strong>生成文书的人不能审批自己生成的文书</strong>。
+          这是制度设计，不是代码能替代的。
+        </p>
+      </div>
+
+      <div class="stack-item" style="padding:20px 22px">
+        <h4 style="color:var(--fg);text-transform:none;letter-spacing:0;font-size:15px">04 · 部署：从「能部署」到「能规模化」</h4>
+        <p>
+          现在的多 worker 模式下，熔断器状态是进程内的 ——
+          每个 worker 各持一份计数器。
+        </p>
+        <p>
+          <strong>方向</strong>：把熔断与限流状态移到 Redis，
+          让多个实例共享同一份上游健康视图；
+          并补齐容器内的链路健康检查与滚动发布策略，
+          使其在多节点环境下具备一致的故障隔离能力。
+        </p>
+      </div>
+
+      <div class="stack-item" style="padding:20px 22px">
+        <h4 style="color:var(--fg);text-transform:none;letter-spacing:0;font-size:15px">05 · 交互：从「一次一问」到「连续追问」</h4>
+        <p>
+          当前的编排以单任务为中心 ——
+          一个案件一次问答、一次文书生成，状态按会话隔离。
+        </p>
+        <p>
+          <strong>方向</strong>：支持多轮追问（「这个处罚怎么算的？再算一下」），
+          引入分层记忆 ——
+          会话寻址（严格隔离）+ 存储分区（按案件/用户）+ 共享内存开关（显式可控），
+          并保证跨会话读取永远不会被意外打开。
+        </p>
+      </div>
+
+      <div class="stack-item" style="padding:20px 22px">
+        <h4 style="color:var(--fg);text-transform:none;letter-spacing:0;font-size:15px">06 · 交付：从「能跑」到「能运维」</h4>
+        <p>
+          目前的验证脚本能查数字一致性，但还缺一套完整的端到端回归。
+        </p>
+        <p>
+          <strong>方向</strong>：把部署前置检查、业务链路验证、文档一致性校验
+          串成一条 CI 流水线，让每次提交都能自动跑完这三关；
+          并把 Skill 契约文档纳入校验范围 ——
+          <strong>文档漂移和代码漂移一样有害</strong>，
+          所以它需要被机器检查，而不是靠人记得更新。
+        </p>
+      </div>
+    </div>
+
+    <div class="note">
+      <b>这六条不是待办清单，是能力地图</b>。<br><br>
+      每一条都指向一个具体问题：检索召回、评测口径、权限分级、多实例一致性、
+      多轮交互、持续集成。
+      它们之间有依赖关系 ——
+      <strong>评测口径（第 2 条）必须先于检索优化（第 1 条）</strong>，
+      否则优化就没有可信的反馈信号；
+      <strong>权限分级（第 3 条）先于规模化部署（第 4 条）</strong>，
+      否则规模越大风险敞口越大。
+    </div>
+  </div>
+</section>
+
 <!-- ==================== 联系 ==================== -->
 <section id="contact">
   <div class="wrap">
     <div class="sec-head">
-      <div class="sec-num">08 / Contact</div>
+      <div class="sec-num">09 / Contact</div>
       <h2>联系我</h2>
     </div>
 
@@ -1147,7 +1335,7 @@
             <tr>
               <td><a href="https://github.com/gengxuexin/inspection-multi-agent-fire-agents">inspection-multi-agent-fire-agents</a></td>
               <td>消防智能执法多模态 Agent 系统</td>
-              <td>19,643 行 · 275 测试 · 34 端点</td>
+              <td>19,643 行 · 393 测试 · 34 端点</td>
             </tr>
             <tr>
               <td><a href="https://github.com/gengxuexin/inspection-multi-agent-foodfactory-agents">inspection-multi-agent-foodfactory-agents</a></td>
