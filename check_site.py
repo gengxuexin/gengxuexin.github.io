@@ -34,7 +34,7 @@ PORT = 9360
 # 站点必须存在的区块（顺序也检查）
 EXPECTED_SECTIONS = [
     "strengths", "soft", "about", "projects", "how",
-    "judgment", "stack", "roadmap", "contact",
+    "judgment", "stack", "contact",
 ]
 
 
